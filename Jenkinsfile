@@ -11,5 +11,19 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            echo "Build is starting"
+        }
+        success {
+            echo "Build is successful"
+        }
+        failure {
+            echo "Build failed"
+        }
+        changed {
+            echo "Build state is changed"
+        }
+    }
 }
 
