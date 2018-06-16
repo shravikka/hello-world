@@ -8,6 +8,7 @@ pipeline {
                     echo "Multiline scripts"
                     ls -lah
                 '''
+                sh 'echo "Fail!"; exit 1'
             }
         }
     }
