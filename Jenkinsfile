@@ -1,5 +1,8 @@
 pipeline {
     agent { docker { image 'node:6.3' } }
+    environment {
+        ENV1 = 'this is env1'
+    }
     stages {
         stage('build') {
             steps {
@@ -8,7 +11,7 @@ pipeline {
                     echo "Multiline scripts"
                     ls -lah
                 '''
-                sh 'echo "Fail!"; exit 1'
+                sh 'printenv'
             }
         }
     }
